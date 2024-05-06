@@ -1,0 +1,28 @@
+<Obfuscator>
+  <Var name="InPath" value="C:\Users\26064\Desktop\FF相关\FF\skillCD\PvpSkillTime\bin\x64\Release" />
+  <Var name="OutPath" value=".\bin\Obfuscated" />
+  <Var name="ExtraFrameworkFolders" value="G:\FF14\XIVLauncher\addon\Hooks\dev" />
+  <Module file="$(InPath)\PvpSkillTime.dll">
+    <!-- 跳过整个类型 -->
+    <Skip type="type" name="OPP.Plugin" />
+    <Skip type="type" name="OPP.Configuration" />
+    <Skip type="type" name="DalamudPluginInterface" />
+    <Skip type="type" name="ICommandManager" />
+    <Skip type="type" name="ITargetManager" />
+    <Skip type="type" name="IClientState" />
+    <Skip type="type" name="IGameInteropProvider" />
+    <Skip type="type" name="IChatGui" />
+    <Skip type="type" name="IObjectTable" />
+    <Skip type="type" name="IFramework" />
+    <Skip type="type" name="ISigScanner" />
+    <Skip type="type" name="IDataManager" />
+    <Skip type="type" name="ActionManager" />
+    <Skip type="type" name="IPluginLog" />
+
+    <!-- 跳过特定的委托类型 -->
+    <Skip type="type" name="OPP.Plugin+GetIconDelegate" />
+    <Skip type="type" name="OPP.Plugin+CanAttackDelegate" />
+
+
+  </Module>
+</Obfuscator>

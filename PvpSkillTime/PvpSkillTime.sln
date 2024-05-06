@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PVPskillTime", "PVPskillTime.csproj", "{BD4F0023-C2BC-473B-BDEE-D89598A20471}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD4F0023-C2BC-473B-BDEE-D89598A20471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4F0023-C2BC-473B-BDEE-D89598A20471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4F0023-C2BC-473B-BDEE-D89598A20471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4F0023-C2BC-473B-BDEE-D89598A20471}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C8943FA-6CC9-436F-9F11-BB22BA66D61E}
+	EndGlobalSection
+EndGlobal
