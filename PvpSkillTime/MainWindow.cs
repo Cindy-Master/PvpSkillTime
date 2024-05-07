@@ -29,7 +29,8 @@ public class MainWindow : Window, IDisposable
     {
         { 29054, 30 },  // Defense
         { 29056, 30 },  // Purification
-        { 29066, 25 }    // Protection
+        { 29066, 25 },    // Protection
+        { 29482, 30 }
     };
     private readonly Dictionary<uint, string> jobIdMap = new Dictionary<uint, string>
     {
@@ -61,8 +62,8 @@ public class MainWindow : Window, IDisposable
     {
         { 29054, "防御" },    // Defense
         { 29056, "净化" },    // Purification
-        { 29066, "保护" }     // Protection
-        // 添加更多的技能ID和中文名称
+        { 29066, "保护" },     // Protection
+        { 29482, "金刚极意"}// 添加更多的技能ID和中文名称
     };
     private Dictionary<(uint sourceId, uint skillId), DateTime> cooldownEndTimes = new Dictionary<(uint, uint), DateTime>();
     private CanAttackDelegate CanAttack;
@@ -210,8 +211,25 @@ public class MainWindow : Window, IDisposable
                             continue;
                         }
 
-                        ImGui.Text($"{jobName} {skillName} {remainingTime.TotalSeconds:0}s");
+                        // 根据技能名设置颜色
+                        switch (skillName)
+                        {
+                            case "防御":
+                                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.68f, 0.85f, 0.90f, 1.0f)); // 蓝色
+                                break;
+                            case "净化":
+                                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.0f, 1.0f, 0.0f, 1.0f)); // 绿色
+                                break;
+                            case "金刚极意":
+                                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 0.4f, 1.0f)); // 黄色
+                                break;
+                            default:
+                                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // 白色
+                                break;
+                        }
 
+                        ImGui.Text($"{jobName} {skillName} {remainingTime.TotalSeconds:0}s");
+                        ImGui.PopStyleColor();
                     }
                 }
             }
@@ -222,7 +240,6 @@ public class MainWindow : Window, IDisposable
         {
             IsOpen = false; // 此处控制窗口关闭
         }
-
     }
 
     public void OnOpenConfig()
